@@ -7,7 +7,7 @@ node {
         git 'https://github.com/rameca231190/flask-examples.git'
     }
     stage("Copy files"){
-        sh "scp * wc2-user@${IP}:/tmp/"
+        sh "scp -r * wc2-user@${IP}:/tmp/"
     }
     stage("Install requirements"){
         sh "ssh ec2-user@${IP}    sudo pip install -t /tmp/requirements.txt"
